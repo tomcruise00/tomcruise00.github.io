@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/public/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/public/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/public/',
+    scheme: 'Muse',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Markdown编辑器Atom在Ubuntu下的安装及使用作为一个从没发过博客新手，突然萌生了要把日常中的点点滴滴记录下来的念头，结果一发不可收拾，连续几个晚上，安装了Ubuntu系统，搭建了了Apache2服务，最后安装了Hexo，中间遇到了很多问题，更加坚定了要做博客把这些记录下来的想法。下面就从安装和使用Markdown编辑器Atom开始我的博客之旅吧！ Atom简介工欲善其事，必先利其器！">
+<meta name="keywords" content="Atom,Markdown,Hexo,Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown编辑器Atom在Ubuntu下的安装及使用">
+<meta property="og:url" content="http://tomcruise.tpddns.cn:8000/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/index.html">
+<meta property="og:site_name" content="Tang">
+<meta property="og:description" content="Markdown编辑器Atom在Ubuntu下的安装及使用作为一个从没发过博客新手，突然萌生了要把日常中的点点滴滴记录下来的念头，结果一发不可收拾，连续几个晚上，安装了Ubuntu系统，搭建了了Apache2服务，最后安装了Hexo，中间遇到了很多问题，更加坚定了要做博客把这些记录下来的想法。下面就从安装和使用Markdown编辑器Atom开始我的博客之旅吧！ Atom简介工欲善其事，必先利其器！">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tomcruise.tpddns.cn:8000/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/1.png">
+<meta property="og:image" content="http://tomcruise.tpddns.cn:8000/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/2.png">
+<meta property="og:updated_time" content="2019-08-01T11:13:24.571Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown编辑器Atom在Ubuntu下的安装及使用">
+<meta name="twitter:description" content="Markdown编辑器Atom在Ubuntu下的安装及使用作为一个从没发过博客新手，突然萌生了要把日常中的点点滴滴记录下来的念头，结果一发不可收拾，连续几个晚上，安装了Ubuntu系统，搭建了了Apache2服务，最后安装了Hexo，中间遇到了很多问题，更加坚定了要做博客把这些记录下来的想法。下面就从安装和使用Markdown编辑器Atom开始我的博客之旅吧！ Atom简介工欲善其事，必先利其器！">
+<meta name="twitter:image" content="http://tomcruise.tpddns.cn:8000/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/1.png">
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="Tang" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://tomcruise.tpddns.cn:8000/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Markdown编辑器Atom在Ubuntu下的安装及使用 | Tang</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/public/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/public/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Tang's world!</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tomcruise.tpddns.cn:8000/public/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang">
+      <meta itemprop="description" content="时光已逝，过眼云烟！！">
+      <meta itemprop="image" content="/public/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Markdown编辑器Atom在Ubuntu下的安装及使用
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-21 20:20:08" itemprop="dateCreated datePublished" datetime="2019-06-21T20:20:08+08:00">2019-06-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-01 19:13:24" itemprop="dateModified" datetime="2019-08-01T19:13:24+08:00">2019-08-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/public/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Markdown编辑器Atom在Ubuntu下的安装及使用"><a href="#Markdown编辑器Atom在Ubuntu下的安装及使用" class="headerlink" title="Markdown编辑器Atom在Ubuntu下的安装及使用"></a>Markdown编辑器Atom在Ubuntu下的安装及使用</h1><p>作为一个从没发过博客新手，突然萌生了要把日常中的点点滴滴记录下来的念头，结果一发不可收拾，连续几个晚上，安装了<a href="https://ubuntu.com/index_kylin" target="_blank" rel="noopener">Ubuntu</a>系统，搭建了了Apache2服务，最后安装了<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>，中间遇到了很多问题，更加坚定了要做博客把这些记录下来的想法。下面就从安装和使用Markdown编辑器<a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>开始我的博客之旅吧！</p>
+<h2 id="Atom简介"><a href="#Atom简介" class="headerlink" title="Atom简介"></a>Atom简介</h2><p>工欲善其事，必先利其器！写博客，必须选择一个好的Markdowm编辑器，网上关于这方面的介绍很多，眼花缭乱，各人有各人的喜好。综合了个方面介绍，最终选择了Atom。为什么会选它呢？先来看下百度百科的介绍。<br>Atom 是github专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。<br>看中了两点，一是有github推出的，二是开源。其它各种功能暂且不谈，毕竟不可能玩的花里胡哨的，有基本的功能就行。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Atom的安装很简单</p>
+<pre><code>$ sudo add-apt-repository ppa:webupd8team/atom
+$ sudo apt-get update
+$ sudo apt-get install atom</code></pre><p>atom的安装过程很慢，中间下载失败了几次，应该是网速的问题，多试几次install atom就好了，会接着上次失败的继续下载的。</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>卸载没用试过，先记录下方法吧，以后说不定用的到</p>
+<pre><code>$ sudo apt-get remove atom
+$ sudo add-apt-repository --remove ppa:webupd8team/atom</code></pre><p>以上只会卸载该软件，要卸载附加的一些软件包，请使用以下命令卸载多余的软件包</p>
+<pre><code>$ sudo apt-get autoremove</code></pre><h2 id="汉化插件安装"><a href="#汉化插件安装" class="headerlink" title="汉化插件安装"></a>汉化插件安装</h2><p>安装完成后需要安装一些插件，安装完成后打开Atom，界面如下</p>
+<img src="/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/1.png" title="Atom登录界面">
+<p>在welcom guide界面中列出了常用的功能，而安装插件则点击其中的install a package,然后点击下面的open installer，会弹出settings的界面，如下</p>
+<img src="/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/2.png" title="Atom插件安装界面">
+<p>接下来就可以开始安装各种插件了，下面列出安装的几个插件<br>1、汉化插件 simplified-chinese-menu 直接输入chinese回车，就会开始搜索，会出来很多结果，最后点击下面的install，就开始安装，等一会就安装好了，安装会自动完成，不用重启软件。我安装的是simplified-chinese-menu，因为下载量最多。<br>2、待更新，先写这么多</p>
+<h2 id="开始写博客"><a href="#开始写博客" class="headerlink" title="开始写博客"></a>开始写博客</h2><p>首先还是在刚才的welcom guide中点击open a project,然后选择你的md文件存放的目录就可以，然后在窗口的最左边的project窗口中显示这个文件夹下所有的文件了，一旦你在那个文件下创建的了md文件，这个窗口中就会显示出相应的文件了，点击你要编辑的文件，就可以打开对应的编辑窗口，然后就可以开始编写你的博客了，在编写过程中按下ctrl+shift+m就可以预览博客效果了。</p>
+<p>##下篇写Markdown语法</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/public/tags/Atom/" rel="tag"># Atom</a>
+          
+            <a href="/public/tags/Markdown/" rel="tag"># Markdown</a>
+          
+            <a href="/public/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/public/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/public/2019/06/22/markdown-yu-fa-shuo-ming/" rel="prev" title="Markdown语法说明">
+                Markdown语法说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tang</p>
+              <div class="site-description motion-element" itemprop="description">时光已逝，过眼云烟！！</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/public/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/public/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/public/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/public/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown编辑器Atom在Ubuntu下的安装及使用"><span class="nav-number">1.</span> <span class="nav-text">Markdown编辑器Atom在Ubuntu下的安装及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Atom简介"><span class="nav-number">1.1.</span> <span class="nav-text">Atom简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载"><span class="nav-number">1.3.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汉化插件安装"><span class="nav-number">1.4.</span> <span class="nav-text">汉化插件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始写博客"><span class="nav-number">1.5.</span> <span class="nav-text">开始写博客</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/public/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/public/js/utils.js?v=7.1.2"></script>
+
+  <script src="/public/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/public/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/public/js/scrollspy.js?v=7.1.2"></script>
+<script src="/public/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/public/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

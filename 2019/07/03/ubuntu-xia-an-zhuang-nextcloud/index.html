@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/public/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/public/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/public/',
+    scheme: 'Muse',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Ubuntu下安装Nextcloud文件服务器，是一个公司最常用的服务应用，每个公司企业基本都有自己的文件服务器实，现储存分享，上传下载文件文档等功能，常见的文件服务器就是ftp服务器，但是ftp服务器的功能实在有限，且对于普通用户使用入手难度较大，又缺乏界面，对于公司的普通用户来说，确实不是一个好的文件服务器。一般ftp也只是用户服务器，网站应用等方面。 在目前的公司企业环境中，企业网盘则是一个">
+<meta name="keywords" content="Ubuntu,Nextcloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu下安装Nextcloud">
+<meta property="og:url" content="http://tomcruise.tpddns.cn:8000/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/index.html">
+<meta property="og:site_name" content="Tang">
+<meta property="og:description" content="Ubuntu下安装Nextcloud文件服务器，是一个公司最常用的服务应用，每个公司企业基本都有自己的文件服务器实，现储存分享，上传下载文件文档等功能，常见的文件服务器就是ftp服务器，但是ftp服务器的功能实在有限，且对于普通用户使用入手难度较大，又缺乏界面，对于公司的普通用户来说，确实不是一个好的文件服务器。一般ftp也只是用户服务器，网站应用等方面。 在目前的公司企业环境中，企业网盘则是一个">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tomcruise.tpddns.cn:8000/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/1.png">
+<meta property="og:image" content="http://tomcruise.tpddns.cn:8000/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/2.png">
+<meta property="og:image" content="http://tomcruise.tpddns.cn:8000/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/6.png">
+<meta property="og:updated_time" content="2019-08-01T11:13:18.730Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu下安装Nextcloud">
+<meta name="twitter:description" content="Ubuntu下安装Nextcloud文件服务器，是一个公司最常用的服务应用，每个公司企业基本都有自己的文件服务器实，现储存分享，上传下载文件文档等功能，常见的文件服务器就是ftp服务器，但是ftp服务器的功能实在有限，且对于普通用户使用入手难度较大，又缺乏界面，对于公司的普通用户来说，确实不是一个好的文件服务器。一般ftp也只是用户服务器，网站应用等方面。 在目前的公司企业环境中，企业网盘则是一个">
+<meta name="twitter:image" content="http://tomcruise.tpddns.cn:8000/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/1.png">
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="Tang" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://tomcruise.tpddns.cn:8000/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Ubuntu下安装Nextcloud | Tang</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/public/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/public/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Tang's world!</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tomcruise.tpddns.cn:8000/public/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang">
+      <meta itemprop="description" content="时光已逝，过眼云烟！！">
+      <meta itemprop="image" content="/public/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ubuntu下安装Nextcloud
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-03 21:17:43" itemprop="dateCreated datePublished" datetime="2019-07-03T21:17:43+08:00">2019-07-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-01 19:13:18" itemprop="dateModified" datetime="2019-08-01T19:13:18+08:00">2019-08-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/public/categories/Nextcloud/" itemprop="url" rel="index"><span itemprop="name">Nextcloud</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Ubuntu下安装Nextcloud"><a href="#Ubuntu下安装Nextcloud" class="headerlink" title="Ubuntu下安装Nextcloud"></a>Ubuntu下安装Nextcloud</h1><p>文件服务器，是一个公司最常用的服务应用，每个公司企业基本都有自己的文件服务器实，现储存分享，上传下载文件文档等功能，常见的文件服务器就是ftp服务器，但是ftp服务器的功能实在有限，且对于普通用户使用入手难度较大，又缺乏界面，对于公司的普通用户来说，确实不是一个好的文件服务器。一般ftp也只是用户服务器，网站应用等方面。</p>
+<p>在目前的公司企业环境中，企业网盘则是一个更好的文件服务器替代方案。百度云盘，相信大家基本都有用过吧，友好的界面交互，网页端，客户端都有，不需要任何命令，实现上传下载，分享等诸多功能。但是这种云盘毕竟不是自己的，很多公司对于将机密文件放在上面心存疑惑，且时不时的网盘关闭热潮也让人担心。既然如此，为何不搭建自己的网盘呢，于是就有了nextcloud。</p>
+<p>对于私人网盘，市面上已经有很多的产品，很多开源半开源的云盘系统。其中最出名的就是 seafile和owncloud/nextcloud。seafile是国人开发的，分块处理，断点上传，速度比后者要快。有社区版和企业版。社区版免费，但是功能有限，企业版要收费，功能更强大。但是社区版的功能，老实说只能满足个人使用，无法满足企业使用。而企业版要收费，费用根据公司人数不同，还需要发邮件询问。</p>
+<p>像我这种人数不多，又不想花钱的，那么nextcloud就是最好的选择，nextcloud是owncloud的一个分支，由原创始人团队维护，是在owncloud被别的公司收购后，由创始人团队创立的新分支。就像 mysql和mariadb。nextcloud完全开源，功能强大，是外国人开发维护的。具体的与seafile等的对比，这里不详细说明了，有兴趣的百度就好。下面记录一下在ubuntu服务器上搭建nextcloud的具体过程。</p>
+<p>自用网盘，没有域名IP访问，修改了默认端口，开启https，实验很多次，下面是过程，基本每一步都有了</p>
+<p>首先先</p>
+<pre><code>sudo apt-get update</code></pre><h2 id="基础环境安装（LAMP）"><a href="#基础环境安装（LAMP）" class="headerlink" title="基础环境安装（LAMP）"></a>基础环境安装（LAMP）</h2><p>nextcloud的安装基础环境有两种，一种LAMP，一种LNMP，我选择了LAMP，区别就是一个用的Apache一个用的Nginx.</p>
+<h3 id="安装-Apache2"><a href="#安装-Apache2" class="headerlink" title="安装 Apache2"></a>安装 Apache2</h3><pre><code>sudo apt install -y apache2</code></pre><p>在浏览器输入你的IP，能看到apache2的网页代表安装成功<br>安装完成后启用下面这些模块，为了防止后面出问题，这边先启用</p>
+<pre><code>sudo a2enmod rewrite dir mime env headers
+service apache2 restart</code></pre><p>以下是一些Apache2的说明<br>1.修改状态：service apache2 status|start|stop|restart<br>2.站点目录：/var/www/<br>3.修改权限：sudo chmod 777 /var/www -Rf #这个比较重要，后面会讲到<br>4.安装目录：/etc/apache2/<br>5.全局配置：/etc/apache2/apache2.conf<br>6.监听端口：/etc/apache2/ports.conf<br>7.虚拟主机：/etc/apache2/sites-enabled/000-default.conf</p>
+<p>运行命令</p>
+<pre><code>sudo vim /etc/apache2/apache2.conf</code></pre><p>在该文件的最后面添加</p>
+<pre><code>AddType application/x-httpd-php .php .htm .html
+AddDefaultCharset UTF-8</code></pre><p>然后重启Apache服务。<br>到此为止，web站点其实已经搭建起来了，只需在/var/www/html目录下存放网页文件，电脑主机就可以访问服务器了，<a href="http://ip/xxx.html" target="_blank" rel="noopener">http://ip/xxx.html</a><br>为nextcloud配置端口等信息</p>
+<p>为nextcloud创建Apache配置文件</p>
+<pre><code>sudo vim /etc/apache2/sites-available/nextcloud.conf</code></pre><p>新建文件，在里面添加以下内容：</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+ServerAdmin admin@example.com
+DocumentRoot /var/www/html/nextcloud
+ServerName example.com
+ServerAlias www.example.com
+ErrorLog /var/log/apache2/nextcloud-error.log
+CustomLog /var/log/apache2/nextcloud-access.log combined
+&lt;Directory /var/www/html/nextcloud/&gt;
+Options +FollowSymlinks
+AllowOverride All
+Require all granted
+SetEnv HOME /var/www/html/nextcloud
+SetEnv HTTP_HOME /var/www/html/nextcloud
+&lt;IfModule mod_dav.c&gt;
+Dav off
+&lt;/IfModule&gt;
+&lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code></pre><p>使用以下命令创建apache2必要的符号链接:</p>
+<pre><code>sudo ln -s /etc/apache2/sites-available/nextcloud.conf /etc/apache2/sites-enabled/nextcloud.conf</code></pre><h3 id="安装-MariaDB数据库"><a href="#安装-MariaDB数据库" class="headerlink" title="安装 MariaDB数据库"></a>安装 MariaDB数据库</h3><pre><code>sudo apt install -y mariadb-server mariadb-client</code></pre><p>启动MariaDB服务</p>
+<pre><code>sudo systemctl start mysql</code></pre><p>查看状态</p>
+<pre><code>sudo systemctl status mysql</code></pre><p>重启服务</p>
+<pre><code>service mysql restart</code></pre><p>执行初始化安全脚本，默认root密码为空，设置root密码和其他选项</p>
+<pre><code>sudo mysql_secure_installation</code></pre><p>为NextCloud创建数据库和用户<br>创建数据库nextcloud，用户名nextcloud，密码XXXXXXXX</p>
+<pre><code>sudo mysql -u root -p</code></pre><p>进入MariaDB后，执行以下命令，<em>分号必须带上</em><br>创建数据库，名为：nextcloud</p>
+<pre><code>CREATE DATABASE nextcloud;</code></pre><p>创建用户nextcloud，password可自定义,下面的命令自己改</p>
+<pre><code>CREATE USER nextcloud@localhost identified by &#39;XXXXXXXX&#39;;</code></pre><p>用以下命令授予必要的权限为数据库和用户授权</p>
+<pre><code>GRANT ALL PRIVILEGES ON nextcloud.* TO nextcloud@localhost identified BY &#39;XXXXXXXX&#39;;  </code></pre><p>用命令更新数据库配置:</p>
+<pre><code>flush privileges;
+exit;</code></pre><h3 id="安装-PHP-新的版本需要安装更高PHP版本https-ywnz-com-linuxjc-3782-html"><a href="#安装-PHP-新的版本需要安装更高PHP版本https-ywnz-com-linuxjc-3782-html" class="headerlink" title="安装 PHP  新的版本需要安装更高PHP版本https://ywnz.com/linuxjc/3782.html"></a>安装 PHP  新的版本需要安装更高PHP版本<a href="https://ywnz.com/linuxjc/3782.html" target="_blank" rel="noopener">https://ywnz.com/linuxjc/3782.html</a></h3><pre><code>sudo apt install php</code></pre><p>查看PHP版本</p>
+<pre><code>php -v</code></pre><h3 id="安装-PHP-扩展"><a href="#安装-PHP-扩展" class="headerlink" title="安装 PHP 扩展"></a>安装 PHP 扩展</h3><pre><code>sudo apt install -y php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring php7.0-intl php-imagick php7.0-xml php7.0-zip</code></pre><p>可以将7.0改成你对应的PHP版本</p>
+<pre><code>service apache2 restart</code></pre><p>重启apache2服务<br>创建一个PHP文件看是否可以正常访问</p>
+<pre><code>sudo vim /var/www/html/phpinfo.php</code></pre><p>打开文件后在里面加入一下内容</p>
+<pre><code>&lt;?php echo phpinfo();?&gt;</code></pre><p>保存，然后在浏览器输入以下内容<br>http://你的ip/phpinfo.php  能看到php网页代表成功</p>
+<h3 id="安装phpmyadmin"><a href="#安装phpmyadmin" class="headerlink" title="安装phpmyadmin"></a>安装phpmyadmin</h3><p>这个主要是用来用网页管理数据库的</p>
+<pre><code>sudo apt-get install phpmyadmin</code></pre><p>安装过程选择apache2，系统还会提示您安装数据库。请确保为该选项选择Yes。接下来，将要求您为phpmyadmin设置MySQL应用程序密码（因此它可以向数据库服务器注册）。输入并验证高强度的密码。最后，您必须输入数据库管理员用户密码。<br>创建phpMyAdmin快捷方式</p>
+<pre><code>sudo ln -s /usr/share/phpmyadmin /var/www/html</code></pre><p>确保apache2的rewrite功能开启，前面有<br>最后输入http://你的IP/phpmyadmin看是否有页面<br>这里可以用上面在MariaDB里面设置的账号密码登录</p>
+<p>变更apache默认端口：</p>
+<pre><code>vim /etc/apache2/ports.conf</code></pre><p>界面</p>
+{% asset_img 1.png 端口 %}
+<p>界面</p>
+{% asset_img 1.png 端口 %}
+
+<pre><code>vim /etc/apache2/sites-enabled/000-default.conf</code></pre><img src="/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/1.png" title="端口">
+<p>界面</p>
+<img src="/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/2.png" title="端口修改">
+
+<pre><code>apache2 restart  //重启服务 或 sudo systemctl restart apache2</code></pre><h2 id="安装nextcloud"><a href="#安装nextcloud" class="headerlink" title="安装nextcloud"></a>安装nextcloud</h2><h3 id="安装（选择稳定版）"><a href="#安装（选择稳定版）" class="headerlink" title="安装（选择稳定版）"></a>安装（选择稳定版）</h3><pre><code>cd /var/www/html
+sudo wget https://download.nextcloud.com/server/releases/nextcloud-16.0.3.zip
+unzip nextcloud-16.0.3.zip
+rm nextcloud-16.0.3.zip</code></pre><p>具体下载版本可以到这里面找<br><a href="https://download.nextcloud.com/server/releases/" target="_blank" rel="noopener">https://download.nextcloud.com/server/releases/</a></p>
+<p>给文件相应的权限</p>
+<pre><code>cd /var/www
+sudo chown www-data:www-data html -Rf
+sudo chmod 750 html -Rf
+cd /var/www/html
+sudo chown www-data:www-data nextcloud -Rf
+chmod 770 nextcloud -Rf</code></pre><p><em>这里的设置是我找了资料自己理解后设置的，感觉这样设置比较安全，这里www-data是WEB服务的默认用户和用户组，没有直接用root，应为用root的话要给777权限，这样不安全，这样只针对www-data有权限，其他用户没有权限修改网站的根目录</em></p>
+<p><em>这里就可以登录了，登录第一次会让你设置数据目录和数据库，我的数据目录没有用默认的，是自己新建的文件夹，所以也要设置这个文件夹的用户和权限为www-data和770</em></p>
+<p>关于权限设置的后面写个专门的BLOG吧</p>
+<h2 id="生成自验证ssl证书、开启https"><a href="#生成自验证ssl证书、开启https" class="headerlink" title="生成自验证ssl证书、开启https"></a>生成自验证ssl证书、开启https</h2><p>参考 <a href="https://blog.csdn.net/Sky_qing/article/details/8940420" target="_blank" rel="noopener">https://blog.csdn.net/Sky_qing/article/details/8940420</a><br>最新参考 <a href="https://blog.csdn.net/Sky_qing/article/details/44303221" target="_blank" rel="noopener">https://blog.csdn.net/Sky_qing/article/details/44303221</a><br><a href="https://www.jianshu.com/p/a2a021b5f3db" target="_blank" rel="noopener">https://www.jianshu.com/p/a2a021b5f3db</a><br><a href="https://www.songma.com/news/txtlist_i25881v.html" target="_blank" rel="noopener">https://www.songma.com/news/txtlist_i25881v.html</a></p>
+<p>为证书新建个目录</p>
+<pre><code>mkdir /etc/apache2/cert</code></pre><p>使用openssl生成自签证书（有效期10年），若无openssl请先安装，按提示操作即可</p>
+<pre><code>openssl req -new -x509 -days 3650 -nodes -out /etc/apache2/cert/cert.crt  -keyout /etc/apache2/cert/cert.key</code></pre><img src="/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/6.png" title="证书创建">
+
+<p>修改证书和文件夹权限</p>
+<pre><code>sudo chown -R 600 /etc/apache2/cert/*
+sudo chown -R 700 /etc/apache2/cert</code></pre><p>修改apache配置启用证书和https</p>
+<pre><code>sudo vim /etc/apache2/sites-available/default-ssl.conf  //设置文件修改部分，如下面</code></pre><pre><code>&lt;VirtualHost _default_:443&gt;
+SSLEngine on
+SSLCertificateFile  /etc/apache2/cert/cert.crt
+SSLCertificateKeyFile /etc/apache2/cert/cert.key</code></pre><p>下面启用ssl</p>
+<pre><code>sudo a2enmod ssl
+sudo a2ensite default-ssl</code></pre><p>添加可信域</p>
+<pre><code>vim /var/www/html/nextcloud/config/config.php  // 修改其中的，如下
+&#39;trusted_domains&#39;=&gt;array(0=&gt;&#39;localhost&#39;,1=&gt;&#39;IP:5005&#39;,2=&gt;&#39;IP&#39;,),</code></pre><p>重启apache服务，每次改完网站配置都要重启下</p>
+<pre><code>/etc/init.d/apache2 restart</code></pre><p>最后登录  <a href="https://IP:5005/nextcloud" target="_blank" rel="noopener">https://IP:5005/nextcloud</a>, 忽略安全提示，使用360极速一类浏览器（不要IE8），登录去吧。如有补充，后期完善</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/public/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+            <a href="/public/tags/Nextcloud/" rel="tag"># Nextcloud</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/public/2019/06/26/ubuntu-xi-tong-an-zhuang-hou-yao-zuo-de-shi-qing/" rel="next" title="Ubuntu系统安装后要做的事情">
+                <i class="fa fa-chevron-left"></i> Ubuntu系统安装后要做的事情
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/public/2019/07/06/ros-jian-jie-he-an-zhuang/" rel="prev" title="ROS简介和安装">
+                ROS简介和安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tang</p>
+              <div class="site-description motion-element" itemprop="description">时光已逝，过眼云烟！！</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/public/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/public/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/public/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/public/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu下安装Nextcloud"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu下安装Nextcloud</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础环境安装（LAMP）"><span class="nav-number">1.1.</span> <span class="nav-text">基础环境安装（LAMP）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Apache2"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装 Apache2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-MariaDB数据库"><span class="nav-number">1.1.2.</span> <span class="nav-text">安装 MariaDB数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-PHP-新的版本需要安装更高PHP版本https-ywnz-com-linuxjc-3782-html"><span class="nav-number">1.1.3.</span> <span class="nav-text">安装 PHP  新的版本需要安装更高PHP版本https://ywnz.com/linuxjc/3782.html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-PHP-扩展"><span class="nav-number">1.1.4.</span> <span class="nav-text">安装 PHP 扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装phpmyadmin"><span class="nav-number">1.1.5.</span> <span class="nav-text">安装phpmyadmin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装nextcloud"><span class="nav-number">1.2.</span> <span class="nav-text">安装nextcloud</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装（选择稳定版）"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装（选择稳定版）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成自验证ssl证书、开启https"><span class="nav-number">1.3.</span> <span class="nav-text">生成自验证ssl证书、开启https</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/public/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/public/js/utils.js?v=7.1.2"></script>
+
+  <script src="/public/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/public/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/public/js/scrollspy.js?v=7.1.2"></script>
+<script src="/public/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/public/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

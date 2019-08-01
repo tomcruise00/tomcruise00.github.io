@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/public/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/public/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/public/',
+    scheme: 'Muse',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ROS简介和安装常用ROS学习网站ROS wiki http://wiki.ros.org/ROS answers https://answers.ros.org古月居 http://www.guyuehome.com/Exbot易科机器人实验室 http://blog.exbot.net/创客制造关于做移动机器人的网站 https://www.ncnynl.com ROS简介历史2007 诞生于">
+<meta name="keywords" content="Ubuntu,ROS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROS简介和安装">
+<meta property="og:url" content="http://tomcruise.tpddns.cn:8000/public/2019/07/06/ros-jian-jie-he-an-zhuang/index.html">
+<meta property="og:site_name" content="Tang">
+<meta property="og:description" content="ROS简介和安装常用ROS学习网站ROS wiki http://wiki.ros.org/ROS answers https://answers.ros.org古月居 http://www.guyuehome.com/Exbot易科机器人实验室 http://blog.exbot.net/创客制造关于做移动机器人的网站 https://www.ncnynl.com ROS简介历史2007 诞生于">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tomcruise.tpddns.cn:8000/public/2019/07/06/ros-jian-jie-he-an-zhuang/1.png">
+<meta property="og:image" content="http://tomcruise.tpddns.cn:8000/public/2019/07/06/ros-jian-jie-he-an-zhuang/2.png">
+<meta property="og:updated_time" content="2019-07-31T14:07:59.852Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ROS简介和安装">
+<meta name="twitter:description" content="ROS简介和安装常用ROS学习网站ROS wiki http://wiki.ros.org/ROS answers https://answers.ros.org古月居 http://www.guyuehome.com/Exbot易科机器人实验室 http://blog.exbot.net/创客制造关于做移动机器人的网站 https://www.ncnynl.com ROS简介历史2007 诞生于">
+<meta name="twitter:image" content="http://tomcruise.tpddns.cn:8000/public/2019/07/06/ros-jian-jie-he-an-zhuang/1.png">
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="Tang" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://tomcruise.tpddns.cn:8000/public/2019/07/06/ros-jian-jie-he-an-zhuang/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>ROS简介和安装 | Tang</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/public/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/public/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Tang's world!</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tomcruise.tpddns.cn:8000/public/public/2019/07/06/ros-jian-jie-he-an-zhuang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang">
+      <meta itemprop="description" content="时光已逝，过眼云烟！！">
+      <meta itemprop="image" content="/public/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ROS简介和安装
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-06 21:25:30" itemprop="dateCreated datePublished" datetime="2019-07-06T21:25:30+08:00">2019-07-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-31 22:07:59" itemprop="dateModified" datetime="2019-07-31T22:07:59+08:00">2019-07-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/public/categories/ROS/" itemprop="url" rel="index"><span itemprop="name">ROS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ROS简介和安装"><a href="#ROS简介和安装" class="headerlink" title="ROS简介和安装"></a>ROS简介和安装</h1><h2 id="常用ROS学习网站"><a href="#常用ROS学习网站" class="headerlink" title="常用ROS学习网站"></a>常用ROS学习网站</h2><p>ROS wiki <a href="http://wiki.ros.org/" target="_blank" rel="noopener">http://wiki.ros.org/</a><br>ROS answers <a href="https://answers.ros.org" target="_blank" rel="noopener">https://answers.ros.org</a><br>古月居 <a href="http://www.guyuehome.com/" target="_blank" rel="noopener">http://www.guyuehome.com/</a><br>Exbot易科机器人实验室 <a href="http://blog.exbot.net/" target="_blank" rel="noopener">http://blog.exbot.net/</a><br>创客制造关于做移动机器人的网站 <a href="https://www.ncnynl.com" target="_blank" rel="noopener">https://www.ncnynl.com</a></p>
+<h2 id="ROS简介"><a href="#ROS简介" class="headerlink" title="ROS简介"></a>ROS简介</h2><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><p>2007 诞生于斯坦福STAIR项目<br>2010 ROS 1.0发布<br>2014 ROS Ingigo发布<br>2016 ROS Kinetic发布<br>2017 ROS 2.0Ardent发布<br>2018 ROS Melodic发布</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>点对点的设计<ol>
+<li>节点单元</li>
+<li>分布式网络</li>
+<li>RPC+TCP/UDP通用系统</li>
+<li>适合多机协同</li>
+</ol>
+</li>
+<li>多语言支持</li>
+<li>架构精简、集成读高</li>
+<li>组建化工具包丰富<ol>
+<li>3D可视化工具——rviz</li>
+<li>物理仿真环境——gazebo</li>
+<li>数据记录工具——rosbag</li>
+<li>Qt工具箱——rqt_*</li>
+</ol>
+</li>
+<li>免费并且开源</li>
+</ol>
+<h3 id="ROS系统实现——计算图"><a href="#ROS系统实现——计算图" class="headerlink" title="ROS系统实现——计算图"></a>ROS系统实现——计算图</h3><ol>
+<li>节点（Node）——软件模块</li>
+<li>节点管理器（ROS Master）——控制中心，提供参数管理</li>
+<li>话题（Topic）——异步通行机制，传输消息</li>
+<li>服务（Service）——同步通信机制，传输请求/应答数据</li>
+</ol>
+<img src="/public/2019/07/06/ros-jian-jie-he-an-zhuang/1.png" title="话题和服务对比">
+
+<h2 id="ROS安装"><a href="#ROS安装" class="headerlink" title="ROS安装"></a>ROS安装</h2><p>直接到ROS wiki上去查看如何安装，因为版本更新比较快，每个版本如何安装还是直接看官方文档说明。因为最新的Ubuntu已经是18.04了，所以选择ROS的LTS版本是melodic的版本，安装说明网址是<a href="http://wiki.ros.org/melodic/Installation/Ubuntu，注意要看英文网站，中文网站没有这个版本。" target="_blank" rel="noopener">http://wiki.ros.org/melodic/Installation/Ubuntu，注意要看英文网站，中文网站没有这个版本。</a></p>
+<p>更新安装源</p>
+<pre><code>sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</code></pre><p>添加密钥</p>
+<pre><code>sudo apt-key adv --keyserver &#39;hkp://keyserver.ubuntu.com:80&#39; --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</code></pre><p>安装ROS</p>
+<pre><code>sudo apt update
+sudo apt install ros-melodic-desktop-full   //这是完全安装,这个时间比较长，根据网速决定</code></pre><p>初始化rosdep</p>
+<pre><code>sudo rosdep init
+rosdep update</code></pre><p>设置环境变量</p>
+<pre><code>echo &quot;source /opt/ros/melodic/setup.bash&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc</code></pre><p>这里的bash是根据自己用的终端来改的，我用的zsh，所以这里要改成zshrc</p>
+<p>安装一些功能包</p>
+<pre><code>sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential</code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>在终端输入roscore启动ROS</p>
+<pre><code>roscore</code></pre><p>查看计算图</p>
+<pre><code>rqt_graph</code></pre><p>参数跟踪工具</p>
+<pre><code>rqt_plot</code></pre><p>ROS常用命令</p>
+<img src="/public/2019/07/06/ros-jian-jie-he-an-zhuang/2.png" title="长用命令">
+
+<p>rosnode<br>rostopic<br>rosservice</p>
+<p>输入ros在按TAB键可以看到所有的ros命令;<br>在输入命令后输入空格再按TAB可以看到这个命令下的命令;<br>在输入命令后输入–help可以查看相应的命令的帮助。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/public/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+            <a href="/public/tags/ROS/" rel="tag"># ROS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/" rel="next" title="Ubuntu下安装Nextcloud">
+                <i class="fa fa-chevron-left"></i> Ubuntu下安装Nextcloud
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/public/2019/07/28/ubuntu-xia-an-zhuang-hexo/" rel="prev" title="Ubuntu下安装hexo">
+                Ubuntu下安装hexo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tang</p>
+              <div class="site-description motion-element" itemprop="description">时光已逝，过眼云烟！！</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/public/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/public/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/public/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/public/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ROS简介和安装"><span class="nav-number">1.</span> <span class="nav-text">ROS简介和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用ROS学习网站"><span class="nav-number">1.1.</span> <span class="nav-text">常用ROS学习网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS简介"><span class="nav-number">1.2.</span> <span class="nav-text">ROS简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#历史"><span class="nav-number">1.2.1.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.2.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROS系统实现——计算图"><span class="nav-number">1.2.3.</span> <span class="nav-text">ROS系统实现——计算图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROS安装"><span class="nav-number">1.3.</span> <span class="nav-text">ROS安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">1.4.</span> <span class="nav-text">启动</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/public/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/public/js/utils.js?v=7.1.2"></script>
+
+  <script src="/public/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/public/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/public/js/scrollspy.js?v=7.1.2"></script>
+<script src="/public/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/public/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

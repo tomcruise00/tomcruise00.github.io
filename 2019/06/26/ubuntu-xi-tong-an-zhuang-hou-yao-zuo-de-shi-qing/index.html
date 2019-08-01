@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/public/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/public/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/public/',
+    scheme: 'Muse',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Ubuntu系统安装后要做的事情Ubuntu系统装完后需要进行一些设置和安装，本文详细记录下这些设置 更改系统语言在桌面右上角的设置里面选择Region&amp;amp;language，然后将Language改为中文，如果没有可以选择下面的manage installed languages，如果提示没有安装完全，就安装完全，等装完后在language里面选择中文拖到最上面，如果没有，在install/">
+<meta name="keywords" content="Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu系统安装后要做的事情">
+<meta property="og:url" content="http://tomcruise.tpddns.cn:8000/public/2019/06/26/ubuntu-xi-tong-an-zhuang-hou-yao-zuo-de-shi-qing/index.html">
+<meta property="og:site_name" content="Tang">
+<meta property="og:description" content="Ubuntu系统安装后要做的事情Ubuntu系统装完后需要进行一些设置和安装，本文详细记录下这些设置 更改系统语言在桌面右上角的设置里面选择Region&amp;amp;language，然后将Language改为中文，如果没有可以选择下面的manage installed languages，如果提示没有安装完全，就安装完全，等装完后在language里面选择中文拖到最上面，如果没有，在install/">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-31T13:43:30.292Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu系统安装后要做的事情">
+<meta name="twitter:description" content="Ubuntu系统安装后要做的事情Ubuntu系统装完后需要进行一些设置和安装，本文详细记录下这些设置 更改系统语言在桌面右上角的设置里面选择Region&amp;amp;language，然后将Language改为中文，如果没有可以选择下面的manage installed languages，如果提示没有安装完全，就安装完全，等装完后在language里面选择中文拖到最上面，如果没有，在install/">
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="Tang" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://tomcruise.tpddns.cn:8000/public/2019/06/26/ubuntu-xi-tong-an-zhuang-hou-yao-zuo-de-shi-qing/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Ubuntu系统安装后要做的事情 | Tang</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/public/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/public/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Tang's world!</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tomcruise.tpddns.cn:8000/public/public/2019/06/26/ubuntu-xi-tong-an-zhuang-hou-yao-zuo-de-shi-qing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang">
+      <meta itemprop="description" content="时光已逝，过眼云烟！！">
+      <meta itemprop="image" content="/public/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ubuntu系统安装后要做的事情
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-26 18:35:40" itemprop="dateCreated datePublished" datetime="2019-06-26T18:35:40+08:00">2019-06-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-31 21:43:30" itemprop="dateModified" datetime="2019-07-31T21:43:30+08:00">2019-07-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/public/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Ubuntu系统安装后要做的事情"><a href="#Ubuntu系统安装后要做的事情" class="headerlink" title="Ubuntu系统安装后要做的事情"></a>Ubuntu系统安装后要做的事情</h1><p>Ubuntu系统装完后需要进行一些设置和安装，本文详细记录下这些设置</p>
+<h2 id="更改系统语言"><a href="#更改系统语言" class="headerlink" title="更改系统语言"></a>更改系统语言</h2><p>在桌面右上角的设置里面选择Region&amp;language，然后将Language改为中文，如果没有可以选择下面的manage installed languages，如果提示没有安装完全，就安装完全，等装完后在language里面选择中文拖到最上面，如果没有，在install/remove language里面需啊则下，然后点apply system wide就好。在regional formats里面也改成中文，然后点apply system wide，改完后重启系统，这边是重点，问你是否更新名称，这里不更新，因为改为中文后，以后有些软件路径上会出问题。</p>
+<h2 id="更新软件源"><a href="#更新软件源" class="headerlink" title="更新软件源"></a>更新软件源</h2><p>这个必须第一个要做，这会影响后续其它软件的安装效率。<br>在菜单界面找到software&amp;updates这个。<br>在ubuntu software界面里面有个download from的选择里面的other，然后选择中国的阿里云。在other software里面把canonical partners这个勾选上，这样就好了。<br>然后进入bash，快捷键ctrl+alt+T。输入以下命令</p>
+<pre><code>sudo apt update
+sudo apt upgrade</code></pre><h2 id="安装搜狗输入法"><a href="#安装搜狗输入法" class="headerlink" title="安装搜狗输入法"></a>安装搜狗输入法</h2><pre><code>sudo apt-get install fcitx-bin #安装fcitx-bin
+sudo apt-get update --fix-missing #修复fcitx-bin安装失败的情况
+sudo apt-get install fcitx-bin #重新安装fcitx-bin
+sudo apt-get install fcitx-table #安装fcitx-table
+</code></pre><p>然后去<a href="https://pinyin.sogou.com/linux/" target="_blank" rel="noopener">搜狗官网</a>下载安装包，下载后按下面方式安装</p>
+<pre><code>sudo dpkg -i sogoupinyin*.deb       #安装搜狗拼音
+sudo apt-get install -f             #修复搜狗拼音安装的错误
+sudo dpkg -i sogoupinyin*.deb       #重新安装搜狗拼音</code></pre><p>装完后在图标界面左下角九个点找到Fcitx Configure，进入设置输入法。</p>
+<h2 id="安装WPS"><a href="#安装WPS" class="headerlink" title="安装WPS"></a>安装WPS</h2><p>官网下在deb包</p>
+<pre><code>sudo dpkg -i wps*.deb</code></pre><p>安装错误则运行以下命令修复</p>
+<pre><code>sudo apt-get install -f</code></pre><p>但是由于Linux版权原因，WPS缺少字体，故我们要安装WPS所需要的字体。首先下载WPS字体，然后解压</p>
+<pre><code>sudo mkdir /usr/share/fonts/WPS-Fonts #新建wps字体存储文件夹
+cd ~/Downloads #进入下载好的字体目录
+sudo apt-get install unzip #安装zip解压软件
+sudo unzip wps_symbol_fonts.zip -d /usr/share/fonts/WPS-Fonts/ #解压字体到指定文件夹
+cd /usr/share/fonts/WPS-Fonts/ 
+sudo mkfontscale #生成字体索引
+sudo mkfontdir #生成字体索引 
+sudo fc-cache #更新字体缓存
+</code></pre><h2 id="安装Shutter"><a href="#安装Shutter" class="headerlink" title="安装Shutter"></a>安装Shutter</h2><p>一款很好用截图软件</p>
+<pre><code>sudo apt-get install shutter    #安装shutter</code></pre><p>在Ubuntu 18.04中安装了我最喜欢的截图工具Shutter后，我发现编辑按钮变编程灰色。这个快速提示将向您展示如何重新启用Shutter中的编辑功能。<br><a href="https://launchpad.net/ubuntu/+archive/primary/+files/libgoocanvas-common_1.0.0-1_all.deb" target="_blank" rel="noopener">libgoocanvas-common</a>、<a href="https://launchpad.net/ubuntu/+archive/primary/+files/libgoocanvas3_1.0.0-1_amd64.deb" target="_blank" rel="noopener">libgoocanvas3</a>、<a href="https://launchpad.net/ubuntu/+archive/primary/+files/libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb" target="_blank" rel="noopener">libgoo-canvas-perl</a></p>
+<pre><code>sudo dpkg -i libgoocanvas-common*.deb
+sudo dpkg -i libgoocanvas3*.deb
+sudo dpkg -i libgoo-canvas-perl*deb</code></pre><p>将上述三个包给安装上，若安装失败，执行下面代码:</p>
+<pre><code>sudo apt-get install -f</code></pre><p>然后再安装这几个包。<br>重启！重启！重启！重要的事情说三遍！</p>
+<h2 id="视频和音频"><a href="#视频和音频" class="headerlink" title="视频和音频"></a>视频和音频</h2><p>安装解码器</p>
+<pre><code>sudo apt-get install ubuntu-restricted-extras</code></pre><p>安装VLC视频播放器</p>
+<pre><code>sudo apt-get install vlc browser-plugin-vlc</code></pre><p>另一款比较好的播放器SMPlayer也不错</p>
+<pre><code>sudo apt-add-repository ppa:rvm/smplayer
+sudo apt-get update
+sudo apt-get install smplayer smplayer-skins smplayer-themes</code></pre><p>安装FFmpeg</p>
+<pre><code>sudo add-apt-repository ppa:djcj/hybrid
+sudo apt-get update
+sudo apt-get install ffmpeg</code></pre><p>安装网易云音乐</p>
+<p>进入网易云音乐Linux版，下载Ubuntu16.04（64位）</p>
+<pre><code>sudo dpkg -i netease-cloud-music*.deb</code></pre><p>此时，直接点击网易云音乐，大部分可能是打不开的。有中解决方案</p>
+<ol>
+<li><p>直接使用命令行打开,但是后台一直有一个终端</p>
+<pre><code>sudo netease-cloud-music</code></pre></li>
+<li><p>修改网易云的快捷方式</p>
+<pre><code>sudo gedit /usr/share/applications/netease-cloud-music.desktop</code></pre></li>
+</ol>
+<p>找到</p>
+<pre><code>Exec=netease-cloud-music %U</code></pre><p>这一行，改为：</p>
+<pre><code>xec=netease-cloud-music --no-sandbox %U</code></pre><p>重启！重启！重启！重要的事情说三遍！</p>
+<h2 id="点击图标最小化"><a href="#点击图标最小化" class="headerlink" title="点击图标最小化"></a>点击图标最小化</h2><pre><code>gsettings set org.gnome.shell.extensions.dash-to-dock click-action &#39;minimize&#39;</code></pre><h2 id="使用Tweaks对gnome进行美化"><a href="#使用Tweaks对gnome进行美化" class="headerlink" title="使用Tweaks对gnome进行美化"></a>使用Tweaks对gnome进行美化</h2><pre><code>sudo apt-get install gnome-tweak-tool #安装tweak
+sudo apt-get install gnome-shell-extensions -y #安装shell扩展
+sudo apt install chrome-gnome-shell #为了能在浏览器内安装gnome插件，火狐和谷歌都能用
+sudo apt-get install gtk2-engines-pixbuf #防止GTK2错误
+sudo apt install libxml2-utils
+</code></pre><p>接下来安装主题和图标，主要从<a href="https://www.gnome-look.org/browse/ord/top/" target="_blank" rel="noopener">gnome-look</a>这里下载，下面举例一个。<br>我从网站找到Gnome-OSC主题，这是一款仿MAC OS的主题。</p>
+<pre><code>mkdir ~/Themes
+cd ~/Downloads</code></pre><p>我下载的两个包是：<br>Gnome-OSC-HS-light-menu– 2-themes.tar.xz<br>Gnome-OSC-HS–2-themes.tar.xz</p>
+<p>接下来解压到指定文件夹，并安装他们</p>
+<pre><code>xz -d Gnome-OSC-HS-light-menu*.tar.xz tar -xvf Gnome-OSC-HS-light-menu*.tar -C ~/Themes xz -d Gnome-OSC-HS--2*.tar.xz tar -xvf Gnome-OSC-HS--2*.tar -C ~/Themes cd ~/Themes sudo cp -R ~/Themes/Gnome-OSC* /usr/share/themes/
+</code></pre><h2 id="安装压缩软件"><a href="#安装压缩软件" class="headerlink" title="安装压缩软件"></a>安装压缩软件</h2><pre><code>sudo apt-get install p7zip-full p7zip-rar rar unzip</code></pre><h2 id="统一Win10和Ubuntu18-04双系统的时间"><a href="#统一Win10和Ubuntu18-04双系统的时间" class="headerlink" title="统一Win10和Ubuntu18.04双系统的时间"></a>统一Win10和Ubuntu18.04双系统的时间</h2><pre><code>timedatectl set-local-rtc 1 --adjust-system-clock</code></pre><h2 id="Chrome-Brower"><a href="#Chrome-Brower" class="headerlink" title="Chrome Brower"></a>Chrome Brower</h2><pre><code>wget -q -O - https://raw.githubusercontent.com/longhr/ubuntu1604hub/master/linux_signing_key.pub | sudo apt-key add
+sudo sh -c &#39;echo &quot;deb [ arch=amd64 ] http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google-chrome.list&#39; 
+sudo apt-get update
+sudo apt-get install google-chrome-stable</code></pre><p>在运行sudo apt-get update时提示了没有公钥的错误，运行下面这段代码就能解决,8888888888填提示缺失的公钥替换</p>
+<pre><code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8888888888</code></pre><h2 id="安装VIM"><a href="#安装VIM" class="headerlink" title="安装VIM"></a>安装VIM</h2><pre><code>sudo apt-get install vim</code></pre><h2 id="安装多版本gcc和g-，并共存"><a href="#安装多版本gcc和g-，并共存" class="headerlink" title="安装多版本gcc和g++，并共存"></a>安装多版本gcc和g++，并共存</h2><pre><code>sudo apt-get install gcc-5 gcc-5-multilib
+sudo apt-get install g++-5 g++-5-multilib
+sudo apt-get install gcc-6 gcc-6-multilib
+sudo apt-get install g++-6 g++-6-multilib
+sudo apt-get install gcc-7 gcc-7-multilib
+sudo apt-get install g++-7 g++-7-multilib
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 50
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 60
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 70</code></pre><p>然后选择gcc和g++版本</p>
+<pre><code>sudo update-alternatives --config gcc
+sudo update-alternatives --config g++</code></pre><h2 id="安装多版本python和pip共存"><a href="#安装多版本python和pip共存" class="headerlink" title="安装多版本python和pip共存"></a>安装多版本python和pip共存</h2><p>ubuntu18.04自带python3，但是没有python2，pip2，pip3。</p>
+<pre><code>sudo apt install python2.7 #安装python2.7
+sudo apt install python-minimal
+sudo apt install curl 
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo python3 get-pip.py #安装pip3
+sudo python2 get-pip.py #安装pip3
+sudo apt install python-testresources #防止pip2出错
+sudo apt install python3-testresources #防止pip3出错
+sudo pip3 install --upgrade pip #升级pip3
+sudo pip2 install --upgrade pip #升级pip2</code></pre><p>在运行sudo python3 get-pip.py的时候提示了错误，说是缺少了这个包，网上后来找到的方法是</p>
+<pre><code>sudo apt-get install python3-distutils
+另一个错误用这个解决
+sudo pip install launchpadlib</code></pre><p>此时pip和python并不知道指向2还是3，需要自己修改。我们使用alias来设置别名。我要让pip和python都指向3</p>
+<pre><code>whereis pip
+pip: /usr/local/bin/pip /usr/local/bin/pip3.6 /usr/local/bin/pip2.7
+whereis python
+python: /usr/bin/python2.7 /usr/bin/python2.7-config /usr/bin/python3.6m /usr/bin/python3.6 /usr/bin/python3.6m-config /usr/bin/python3.6-config /usr/bin/python /usr/lib/python2.7 /usr/lib/python3.7 /usr/lib/python3.6 /etc/python2.7 /etc/python3.6 /etc/python /usr/local/lib/python2.7 /usr/local/lib/python3.6 /usr/include/python2.7 /usr/include/python3.6m /usr/include/python3.6 /usr/share/python /usr/share/man/man1/python.1.gz</code></pre><p>可见pip3在：</p>
+<pre><code>/usr/local/bin/pip3.6</code></pre><p>python在：</p>
+<pre><code>/usr/bin/python3.6</code></pre><p>自定义alias别名：</p>
+<pre><code>gedit ~/.bashrc</code></pre><p>打开文件后，在最后一行加：</p>
+<pre><code>alias pip=/usr/local/bin/pip3.6
+alias python=/usr/bin/python3.6</code></pre><p>然后更新环境：</p>
+<pre><code>source ~/.bashrc</code></pre><p>如果用zsh的这边就是zshrc</p>
+<h2 id="安装NVIDIA驱动"><a href="#安装NVIDIA驱动" class="headerlink" title="安装NVIDIA驱动"></a>安装NVIDIA驱动</h2><p>首先删除旧的NVIDIA驱动：</p>
+<pre><code>sudo apt-get purge nvidia-*</code></pre><p>然后安装</p>
+<pre><code>sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt-get upgrade
+ubuntu-drivers devices  #查看自己的显卡及可以安装的驱动版本</code></pre><blockquote>
+<p>ubuntu-drivers devices<br>== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==<br>modalias : pci:v000010DEd00001C02sv00007377sd00000000bc03sc00i00<br>vendor : NVIDIA Corporation<br>model : GP106 [GeForce GTX 1060 3GB]<br>driver : nvidia-driver-390 - third-party free<br>driver : nvidia-driver-396 - third-party free recommended<br>driver : xserver-xorg-video-nouveau - distro free builtin</p>
+</blockquote>
+<p>我的是上面这样。最新版驱动为396，我就安装它。</p>
+<pre><code>sudo apt install nvidia-driver-396</code></pre><p>然后重启</p>
+<h2 id="支持exfat"><a href="#支持exfat" class="headerlink" title="支持exfat"></a>支持exfat</h2><pre><code>sudo apt-get install exfat-fuse exfat-utils</code></pre><h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><p>ZSH Shell 也称为 Z Shell，类似于 Bash 与 SH 的 Linux Shell，本文介绍在 Ubuntu 18.04 系统下安装 ZSH Shell 并且美化它，让 ZSH Shell 的使用更加得心应手。流行的 Git 版本控制系统也可以使用插件与 ZSH 很好的集成，这一点对软件开发人员来说非常有用。而且 ZSH 有非常多的主题和插件支持，比 Bash 更具可定制性。简单来说，ZSH 就是一款替代 Bash 且非常好用的 Linux Shell</p>
+<p>ZSH 已经被收录到了 Ubuntu 18.04 LTS 的官方软件包存储库中了，所以安装起来也非常容易。使用以下命令就可以直接安装：</p>
+<pre><code>sudo apt update
+sudo apt install zsh</code></pre><p>ZSH Shell 安装好之后，可以使用如下命令查看其版本：</p>
+<pre><code>zsh --version</code></pre><p>下面我们将向您介绍如何将 ZSH 设置为默认 Shell。<br>使用以下命令找出 ZSH Shell 的路径：</p>
+<pre><code>whereis zsh</code></pre><p>ZSH Shell 的路径一般是 /usr/bin/zsh<br>现在使用如下命令将 ZSH 设置为当前登录用户的默认 Shell：</p>
+<pre><code>sudo chsh -s /usr/bin/zsh
+sudo usermod -s /usr/bin/zsh $(whoami)
+二选一</code></pre><p>注销重新登录，打开终端会有提示，按键盘数字键 2，ZSH 会使用推荐的设置创建一个新的 ~/.zshrc 配置文件。如下图所示，此后您就可以正常使用 ZSH Shell 了</p>
+<p>确认zsh是否是默认SHELL，输出/usr/bin/zsh</p>
+<pre><code>echo $SHELL</code></pre><p>安装Git</p>
+<pre><code>sudo apt-get install git</code></pre><p>安装Oh-My-Zsh<br>使用curl方式安装：</p>
+<pre><code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></pre><p>安装autojump自动跳转插件<br><a href="https://www.linuxidc.com/Linux/2015-08/121421.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2015-08/121421.htm</a><br>这个网址写不错可以看看</p>
+<pre><code>sudo apt-get install autojump</code></pre><p>配置教程：cat /usr/share/doc/autojump/README.Debian<br>配置</p>
+<pre><code>vim ~/.zshrc
+# 在最后一行加入，注意点后面是一个空格
+. /usr/share/autojump/autojump.sh
+source ~/.zshrc # 生效</code></pre><p>安装zsh-syntax-highlighting语法高亮插件</p>
+<pre><code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+echo &quot;source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&quot; &gt;&gt; ${ZDOTDIR:-$HOME}/.zshrc source ~/.zshrc</code></pre><p>安装zsh-autosuggestions语法历史记录插件</p>
+<pre><code>git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions</code></pre><p>配置</p>
+<pre><code>vim ~/.zshrc #搜索 plugins= # 在括号中加上 zsh-autosuggestions # 在plugins 下加上 setopt no_nomatch # 如果不加的话就不能使用* # 在最后一行 添加 source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zshrc</code></pre><p>配置主题：</p>
+<pre><code>sudo vim ~/.zshrc
+# 找到ZSH_THEME=&quot;robbyrussell&quot;，修改为：ZSH_THEME=&quot;ys&quot;；
+source ~/.zshrc
+如果发生了乱码 则修改以下终端的文字</code></pre><p>jtriley这个主题也不错</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/public/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/public/2019/06/24/ubuntu-xi-tong-xia-shu-ru-ming-ling-hou-ti-shi-dquote-wen-ti/" rel="next" title="Ubuntu系统下输入命令后提示dquote>问题">
+                <i class="fa fa-chevron-left"></i> Ubuntu系统下输入命令后提示dquote>问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/" rel="prev" title="Ubuntu下安装Nextcloud">
+                Ubuntu下安装Nextcloud <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tang</p>
+              <div class="site-description motion-element" itemprop="description">时光已逝，过眼云烟！！</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/public/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/public/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/public/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/public/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu系统安装后要做的事情"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu系统安装后要做的事情</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更改系统语言"><span class="nav-number">1.1.</span> <span class="nav-text">更改系统语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新软件源"><span class="nav-number">1.2.</span> <span class="nav-text">更新软件源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装搜狗输入法"><span class="nav-number">1.3.</span> <span class="nav-text">安装搜狗输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装WPS"><span class="nav-number">1.4.</span> <span class="nav-text">安装WPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Shutter"><span class="nav-number">1.5.</span> <span class="nav-text">安装Shutter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频和音频"><span class="nav-number">1.6.</span> <span class="nav-text">视频和音频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点击图标最小化"><span class="nav-number">1.7.</span> <span class="nav-text">点击图标最小化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Tweaks对gnome进行美化"><span class="nav-number">1.8.</span> <span class="nav-text">使用Tweaks对gnome进行美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装压缩软件"><span class="nav-number">1.9.</span> <span class="nav-text">安装压缩软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统一Win10和Ubuntu18-04双系统的时间"><span class="nav-number">1.10.</span> <span class="nav-text">统一Win10和Ubuntu18.04双系统的时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome-Brower"><span class="nav-number">1.11.</span> <span class="nav-text">Chrome Brower</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装VIM"><span class="nav-number">1.12.</span> <span class="nav-text">安装VIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装多版本gcc和g-，并共存"><span class="nav-number">1.13.</span> <span class="nav-text">安装多版本gcc和g++，并共存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装多版本python和pip共存"><span class="nav-number">1.14.</span> <span class="nav-text">安装多版本python和pip共存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装NVIDIA驱动"><span class="nav-number">1.15.</span> <span class="nav-text">安装NVIDIA驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持exfat"><span class="nav-number">1.16.</span> <span class="nav-text">支持exfat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装oh-my-zsh"><span class="nav-number">1.17.</span> <span class="nav-text">安装oh-my-zsh</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/public/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/public/js/utils.js?v=7.1.2"></script>
+
+  <script src="/public/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/public/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/public/js/scrollspy.js?v=7.1.2"></script>
+<script src="/public/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/public/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

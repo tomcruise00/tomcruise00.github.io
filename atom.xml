@@ -3,11 +3,11 @@
   <title>Tang</title>
   
   <subtitle>Tang&#39;s world!</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/public/atom.xml" rel="self"/>
   
-  <link href="http://tomcruise00.github.io%60/"/>
-  <updated>2019-07-31T14:59:23.096Z</updated>
-  <id>http://tomcruise00.github.io`/</id>
+  <link href="http://tomcruise.tpddns.cn:8000/public/"/>
+  <updated>2019-08-01T11:14:32.893Z</updated>
+  <id>http://tomcruise.tpddns.cn:8000/public/</id>
   
   <author>
     <name>Tang</name>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hello</title>
-    <link href="http://tomcruise00.github.io%60/2019/07/31/2019/07/31/hello/"/>
-    <id>http://tomcruise00.github.io`/2019/07/31/2019/07/31/hello/</id>
-    <published>2019-07-31T14:59:23.000Z</published>
-    <updated>2019-07-31T14:59:23.096Z</updated>
+    <title>Hexo中美化主题NEXT配置</title>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/08/01/hexo-zhong-mei-hua-zhu-ti-next-pei-zhi/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/08/01/hexo-zhong-mei-hua-zhu-ti-next-pei-zhi/</id>
+    <published>2019-08-01T11:14:32.000Z</published>
+    <updated>2019-08-01T11:14:32.893Z</updated>
     
     <summary type="html">
     
@@ -32,10 +32,10 @@
   
   <entry>
     <title>Ubuntu下安装hexo</title>
-    <link href="http://tomcruise00.github.io%60/2019/07/28/2019-07-28-ubuntu-xia-an-zhuang-hexo/"/>
-    <id>http://tomcruise00.github.io`/2019/07/28/2019-07-28-ubuntu-xia-an-zhuang-hexo/</id>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/07/28/ubuntu-xia-an-zhuang-hexo/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/07/28/ubuntu-xia-an-zhuang-hexo/</id>
     <published>2019-07-28T13:25:30.000Z</published>
-    <updated>2019-07-31T15:49:52.375Z</updated>
+    <updated>2019-08-01T11:31:45.099Z</updated>
     
     <summary type="html">
     
@@ -49,19 +49,19 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/"/>
+      <category term="Hexo" scheme="http://tomcruise.tpddns.cn:8000/public/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://tomcruise00.github.io%60/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Hexo/"/>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>ROS简介和安装</title>
-    <link href="http://tomcruise00.github.io%60/2019/07/06/2019-07-06-ros-jian-jie-he-an-zhuang/"/>
-    <id>http://tomcruise00.github.io`/2019/07/06/2019-07-06-ros-jian-jie-he-an-zhuang/</id>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/07/06/ros-jian-jie-he-an-zhuang/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/07/06/ros-jian-jie-he-an-zhuang/</id>
     <published>2019-07-06T13:25:30.000Z</published>
     <updated>2019-07-31T14:07:59.852Z</updated>
     
@@ -77,21 +77,21 @@
     
     </summary>
     
-      <category term="ROS" scheme="http://tomcruise00.github.io%60/categories/ROS/"/>
+      <category term="ROS" scheme="http://tomcruise.tpddns.cn:8000/public/categories/ROS/"/>
     
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Ubuntu/"/>
     
-      <category term="ROS" scheme="http://tomcruise00.github.io%60/tags/ROS/"/>
+      <category term="ROS" scheme="http://tomcruise.tpddns.cn:8000/public/tags/ROS/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu下安装Nextcloud</title>
-    <link href="http://tomcruise00.github.io%60/2019/07/03/2019-07-03-ubuntu-xia-an-zhuang-nextcloud/"/>
-    <id>http://tomcruise00.github.io`/2019/07/03/2019-07-03-ubuntu-xia-an-zhuang-nextcloud/</id>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/07/03/ubuntu-xia-an-zhuang-nextcloud/</id>
     <published>2019-07-03T13:17:43.000Z</published>
-    <updated>2019-07-31T13:43:30.292Z</updated>
+    <updated>2019-08-01T11:13:18.730Z</updated>
     
     <summary type="html">
     
@@ -105,21 +105,19 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/"/>
-    
-      <category term="Nextcloud" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/Nextcloud/"/>
+      <category term="Nextcloud" scheme="http://tomcruise.tpddns.cn:8000/public/categories/Nextcloud/"/>
     
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Ubuntu/"/>
     
-      <category term="Nextcloud" scheme="http://tomcruise00.github.io%60/tags/Nextcloud/"/>
+      <category term="Nextcloud" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Nextcloud/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu系统安装后要做的事情</title>
-    <link href="http://tomcruise00.github.io%60/2019/06/26/2019-06-26-ubuntu-xi-tong-an-zhuang-hou-yao-zuo-de-shi-qing/"/>
-    <id>http://tomcruise00.github.io`/2019/06/26/2019-06-26-ubuntu-xi-tong-an-zhuang-hou-yao-zuo-de-shi-qing/</id>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/06/26/ubuntu-xi-tong-an-zhuang-hou-yao-zuo-de-shi-qing/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/06/26/ubuntu-xi-tong-an-zhuang-hou-yao-zuo-de-shi-qing/</id>
     <published>2019-06-26T10:35:40.000Z</published>
     <updated>2019-07-31T13:43:30.292Z</updated>
     
@@ -135,17 +133,17 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/categories/Ubuntu/"/>
     
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu系统下输入命令后提示dquote&gt;问题</title>
-    <link href="http://tomcruise00.github.io%60/2019/06/24/2019-06-24-ubuntu-xi-tong-xia-shu-ru-ming-ling-hou-ti-shi-dquote-wen-ti/"/>
-    <id>http://tomcruise00.github.io`/2019/06/24/2019-06-24-ubuntu-xi-tong-xia-shu-ru-ming-ling-hou-ti-shi-dquote-wen-ti/</id>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/06/24/ubuntu-xi-tong-xia-shu-ru-ming-ling-hou-ti-shi-dquote-wen-ti/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/06/24/ubuntu-xi-tong-xia-shu-ru-ming-ling-hou-ti-shi-dquote-wen-ti/</id>
     <published>2019-06-24T14:01:27.000Z</published>
     <updated>2019-07-31T13:43:30.292Z</updated>
     
@@ -161,19 +159,19 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/categories/Ubuntu/"/>
     
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu18.04和WIN10双系统安装</title>
-    <link href="http://tomcruise00.github.io%60/2019/06/24/2019-06-24-ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/"/>
-    <id>http://tomcruise00.github.io`/2019/06/24/2019-06-24-ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/</id>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/06/24/ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/06/24/ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/</id>
     <published>2019-06-24T13:48:05.000Z</published>
-    <updated>2019-07-31T13:43:30.292Z</updated>
+    <updated>2019-08-01T11:15:35.038Z</updated>
     
     <summary type="html">
     
@@ -187,21 +185,21 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/categories/Ubuntu/"/>
     
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Ubuntu/"/>
     
-      <category term="WIN10" scheme="http://tomcruise00.github.io%60/tags/WIN10/"/>
+      <category term="Win10" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Win10/"/>
     
   </entry>
   
   <entry>
     <title>Markdown语法说明</title>
-    <link href="http://tomcruise00.github.io%60/2019/06/22/2019-06-22-markdown-yu-fa-shuo-ming/"/>
-    <id>http://tomcruise00.github.io`/2019/06/22/2019-06-22-markdown-yu-fa-shuo-ming/</id>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/06/22/markdown-yu-fa-shuo-ming/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/06/22/markdown-yu-fa-shuo-ming/</id>
     <published>2019-06-22T13:34:52.000Z</published>
-    <updated>2019-07-31T13:43:30.292Z</updated>
+    <updated>2019-08-01T11:13:20.465Z</updated>
     
     <summary type="html">
     
@@ -215,25 +213,23 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/"/>
-    
-      <category term="Hexo" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/Hexo/"/>
+      <category term="Hexo" scheme="http://tomcruise.tpddns.cn:8000/public/categories/Hexo/"/>
     
     
-      <category term="Markdown" scheme="http://tomcruise00.github.io%60/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Markdown/"/>
     
-      <category term="Hexo" scheme="http://tomcruise00.github.io%60/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Hexo/"/>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>Markdown编辑器Atom在Ubuntu下的安装及使用</title>
-    <link href="http://tomcruise00.github.io%60/2019/06/21/2019-06-21-markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/"/>
-    <id>http://tomcruise00.github.io`/2019/06/21/2019-06-21-markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/</id>
+    <link href="http://tomcruise.tpddns.cn:8000/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/"/>
+    <id>http://tomcruise.tpddns.cn:8000/public/2019/06/21/markdown-bian-ji-qi-atom-zai-ubuntu-xia-de-an-zhuang-ji-shi-yong/</id>
     <published>2019-06-21T12:20:08.000Z</published>
-    <updated>2019-07-31T13:43:30.292Z</updated>
+    <updated>2019-08-01T11:13:24.571Z</updated>
     
     <summary type="html">
     
@@ -247,18 +243,16 @@
     
     </summary>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/"/>
-    
-      <category term="Hexo" scheme="http://tomcruise00.github.io%60/categories/Ubuntu/Hexo/"/>
+      <category term="Hexo" scheme="http://tomcruise.tpddns.cn:8000/public/categories/Hexo/"/>
     
     
-      <category term="Atom" scheme="http://tomcruise00.github.io%60/tags/Atom/"/>
+      <category term="Atom" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Atom/"/>
     
-      <category term="Markdown" scheme="http://tomcruise00.github.io%60/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Markdown/"/>
     
-      <category term="Hexo" scheme="http://tomcruise00.github.io%60/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Hexo/"/>
     
-      <category term="Ubuntu" scheme="http://tomcruise00.github.io%60/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="http://tomcruise.tpddns.cn:8000/public/tags/Ubuntu/"/>
     
   </entry>
   

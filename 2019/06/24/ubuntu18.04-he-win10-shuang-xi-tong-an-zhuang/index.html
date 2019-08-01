@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/public/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/public/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/public/',
+    scheme: 'Muse',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Ubuntu18.04和WIN10双系统安装今天讲一下Ubuntu的安装，Ubuntu的安装网上一搜一大堆，本文讲和WIN10双系统安装，单独装Ubuntu也可参考，比双系统安装更简单。目前网上大多数教程是在虚拟机下安装的，但为了后续学习，还是直接上双系统，我的电脑是一个固态和一个机械盘，因此计划在固态盘装WIN10,在机械盘装Ubuntu。 WIN10安装WIN10系统的安装本文不讲，很简单，制">
+<meta name="keywords" content="Ubuntu,Win10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu18.04和WIN10双系统安装">
+<meta property="og:url" content="http://tomcruise.tpddns.cn:8000/public/2019/06/24/ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/index.html">
+<meta property="og:site_name" content="Tang">
+<meta property="og:description" content="Ubuntu18.04和WIN10双系统安装今天讲一下Ubuntu的安装，Ubuntu的安装网上一搜一大堆，本文讲和WIN10双系统安装，单独装Ubuntu也可参考，比双系统安装更简单。目前网上大多数教程是在虚拟机下安装的，但为了后续学习，还是直接上双系统，我的电脑是一个固态和一个机械盘，因此计划在固态盘装WIN10,在机械盘装Ubuntu。 WIN10安装WIN10系统的安装本文不讲，很简单，制">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tomcruise.tpddns.cn:8000/public/2019/06/24/ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/1.png">
+<meta property="og:updated_time" content="2019-08-01T11:15:35.038Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu18.04和WIN10双系统安装">
+<meta name="twitter:description" content="Ubuntu18.04和WIN10双系统安装今天讲一下Ubuntu的安装，Ubuntu的安装网上一搜一大堆，本文讲和WIN10双系统安装，单独装Ubuntu也可参考，比双系统安装更简单。目前网上大多数教程是在虚拟机下安装的，但为了后续学习，还是直接上双系统，我的电脑是一个固态和一个机械盘，因此计划在固态盘装WIN10,在机械盘装Ubuntu。 WIN10安装WIN10系统的安装本文不讲，很简单，制">
+<meta name="twitter:image" content="http://tomcruise.tpddns.cn:8000/public/2019/06/24/ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/1.png">
+
+
+
+  <link rel="alternate" href="/public/atom.xml" title="Tang" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://tomcruise.tpddns.cn:8000/public/2019/06/24/ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Ubuntu18.04和WIN10双系统安装 | Tang</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/public/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/public/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Tang's world!</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/public/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tomcruise.tpddns.cn:8000/public/public/2019/06/24/ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang">
+      <meta itemprop="description" content="时光已逝，过眼云烟！！">
+      <meta itemprop="image" content="/public/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ubuntu18.04和WIN10双系统安装
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-24 21:48:05" itemprop="dateCreated datePublished" datetime="2019-06-24T21:48:05+08:00">2019-06-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-01 19:15:35" itemprop="dateModified" datetime="2019-08-01T19:15:35+08:00">2019-08-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/public/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Ubuntu18-04和WIN10双系统安装"><a href="#Ubuntu18-04和WIN10双系统安装" class="headerlink" title="Ubuntu18.04和WIN10双系统安装"></a>Ubuntu18.04和WIN10双系统安装</h1><p>今天讲一下Ubuntu的安装，Ubuntu的安装网上一搜一大堆，本文讲和WIN10双系统安装，单独装Ubuntu也可参考，比双系统安装更简单。目前网上大多数教程是在虚拟机下安装的，但为了后续学习，还是直接上双系统，我的电脑是一个固态和一个机械盘，因此计划在固态盘装WIN10,在机械盘装Ubuntu。</p>
+<h2 id="WIN10安装"><a href="#WIN10安装" class="headerlink" title="WIN10安装"></a>WIN10安装</h2><p>WIN10系统的安装本文不讲，很简单，制作个安装盘，直接装好了，装好后激活下就可以了，网上搜索下就行。需要注意的是现在最新的系统安装都是UEFI+GPT安装了，传统的BIOS+MBR模式后面会逐渐淘汰，这对后面安装Ubuntu的兼容性更好。电脑在BIOS里设置UEFI模式，另外如果有secure boot模式则要关闭掉。UEFI是引导模式，GPT和MBR是分区类型，这要在新建磁盘的时候设置，当然也可以后面转，但这有可能会数据丢失或者出错。<br>下面是我的安装方式，前面用win10安装盘进入安装界面后，在进入后在磁盘界面后按shift+F10进入命令符：</p>
+<ol>
+<li>Diskpart  （进入分区管理）</li>
+<li>list disk （列出所有磁盘）</li>
+<li>select disk  X （选择进入的磁盘，  选择你的win10要按在那个盘里， 一般是 0）</li>
+<li>clean （ 第三步完成 会提示 所选磁盘，这一步是清楚磁盘，数据会被清楚）</li>
+<li>convert GPT  （转换成GPT 格式）<br>完成后，关掉窗口，选择磁盘安装WIN10，一路装完就可以<br>要注意的也就这些，网上找个版本下了装就可以了，装好百度激活下。</li>
+</ol>
+<p>激活方法：</p>
+<ol>
+<li>开始菜单右键进入windows powershell（管理员）</li>
+<li>输入slmgr /ipk 神Key，这个神Key百度搜索，搜索的时候注意搜索时间设为一周最近的</li>
+<li>slmgr /skms kms.xspace.in设置激活名称</li>
+<li>slmgr /ato激活命令</li>
+<li>slmgr.vbs -xpr查看是否永久激活</li>
+</ol>
+<h2 id="Ubuntu安装"><a href="#Ubuntu安装" class="headerlink" title="Ubuntu安装"></a>Ubuntu安装</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><a href="https://baike.baidu.com/item/ubuntu/155795?fr=aladdin" target="_blank" rel="noopener">Ubuntu</a>（友帮拓、优般图、乌班图）是一个以桌面应用为主的开源GNU/Linux操作系统，Ubuntu 是基于Debian GNU/Linux，支持x86、amd64（即x64）和ppc架构，由全球化的专业开发团队（Canonical Ltd）打造的。<br>Ubuntu有很多个版本，有Desktop、Server、Iot、Cloud版本分别是桌面版、服务器版、物联网版和云版。一般我们选择桌面版就可以，其实后来了解到桌面版和服务器版其实没有什么区别，只是默认安装的包不同，这个在系统安装好后，还可以根据需要下载安装自己需要的包。为什么装桌面版，因为桌面版默认带我们熟悉的桌面操作环境，而服务器版如果要桌面环境还要另外安装。我们用惯了WINDOWS系统，如果一个系统上来就只有命令行，我们很难想象，所以还是装桌面版比较适合我们，后面如果有一些服务器版的功能需要，再另外安装就好了。<br>在官方界面里面还有有LTS版本和其它的版本选择。不带LTS的版本往往比较新，这个有点类似与尝鲜版，不稳定，我们一般选择安装LTS版本，叫做长期支持版。目前最新的版本为18.04。我们下载安装就好了。</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Ubuntu的官网是<em><a href="https://ubuntu.com/index_kylin" target="_blank" rel="noopener">https://ubuntu.com/index_kylin</a></em>，大家登录选择DOWNLOAD页签进去后，就能看到各个下载版本，界面很简单，不同英文应该也能看懂。后面要习惯看英文网站和官网，因为有一些问题可以从官网上找到答案。</p>
+<h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><p>我刚开始是用UltralISO做的，很简单：</p>
+<ol>
+<li>打开镜像文件</li>
+<li>选择启动下的写入硬盘镜像</li>
+<li>在对话框里选择要做的U盘，格式用USB-HDD+</li>
+<li>然后格式化，格式化完成后写入就可以了<br>后来重新用<a href="https://universal-usb-installer.en.softonic.com/" target="_blank" rel="noopener">Universal-USB-Installer</a>这个软件做的。<br>步骤很简单：</li>
+<li>选择你要安装的系统Ubuntu</li>
+<li>选择你下载的Ubuntu.iso文件</li>
+<li>选择你的U盘<br>然后就好了。</li>
+</ol>
+<h3 id="分出空闲空间"><a href="#分出空闲空间" class="headerlink" title="分出空闲空间"></a>分出空闲空间</h3><p>首先，在现有计算机下划出一个专门给Ubuntu的磁盘分区，推荐Windows自带的磁盘管理工具。快捷键“win+X”-&gt;“磁盘管理”-&gt;“压缩卷”（Windows安装在固态硬盘则压缩固态硬盘，机械硬盘同理），压缩完之后会多出了一块“未分配空间”给Ubuntu。下图是个例子，盗了个人家的图^^。</p>
+<img src="/public/2019/06/24/ubuntu18.04-he-win10-shuang-xi-tong-an-zhuang/1.png" title="磁盘分区">
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>开始正式安装，网上有说要先进入BIOS里面把Secure Boot这个功能给关掉，好像设计初衷是安全保护，但后来变为厂家为了垄断，不让用户安装其它系统用。具体也没去试不关掉有什么问题，为了后面安装不出问题就去关掉吧，如果BIOS没有这个选项就跳过。</p>
+<p>关闭计算机，插入已经做成启动盘的U盘，进入Boot menu选择界面，选择“Istall Ubuntu”，图形化的安装界面，建议用英文模式安装，安装完后再进系统改语言，改的时候不要改文件名称，这是为了以后装一些软件不出问题，因为Ubuntu的中文语言会将相应的文件路径也改成英文。软件暂时不要安装，网也不要连，选典型安装，继续，当出现要手动分盘符的时候，请选择“其它选项”。<br>找到预先留出的 free space  空间起始位置不用动，</p>
+<ul>
+<li>双击选定大小为500M的 逻辑分区 EFI 格式 EFI 引导</li>
+<li>选定8G左右 主分区  设定为 swap   交换空间</li>
+<li>选定10G+左右 主分区 ext4  挂在到 ‘ / ’  下</li>
+<li>剩下的 主分区 ext4  挂载到 ‘ /home ’  下<br>注意不需要挂在/boot 不需要挂在/boot  注意不需要挂在/boot   重要的事情说三遍！！<br>最后需要将安装启动引导器的设备这一栏更改为刚才分的EFI分区，比如我的是/dev/sdb5<br>选择完毕后，点击继续，后面的就是简单的了，有让你确定地址，直接默认继续，然后让你输入名字，密码什么的，自己设置一下就好；跟着步骤都点完后，就可以点击安装了，安装完毕会提示重启，点击重启就好（U盘可以不拔掉，但是需要进入BIOS界面，会是UEFI引导启动，找到Ubuntu启动项，点击启动就好，会出现让你选择Ubuntu还是Win10系统，自己选择吧。）</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/public/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+            <a href="/public/tags/Win10/" rel="tag"># Win10</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/public/2019/06/22/markdown-yu-fa-shuo-ming/" rel="next" title="Markdown语法说明">
+                <i class="fa fa-chevron-left"></i> Markdown语法说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/public/2019/06/24/ubuntu-xi-tong-xia-shu-ru-ming-ling-hou-ti-shi-dquote-wen-ti/" rel="prev" title="Ubuntu系统下输入命令后提示dquote>问题">
+                Ubuntu系统下输入命令后提示dquote>问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tang</p>
+              <div class="site-description motion-element" itemprop="description">时光已逝，过眼云烟！！</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/public/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/public/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/public/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/public/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu18-04和WIN10双系统安装"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu18.04和WIN10双系统安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WIN10安装"><span class="nav-number">1.1.</span> <span class="nav-text">WIN10安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu安装"><span class="nav-number">1.2.</span> <span class="nav-text">Ubuntu安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.2.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">1.2.2.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制作安装盘"><span class="nav-number">1.2.3.</span> <span class="nav-text">制作安装盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分出空闲空间"><span class="nav-number">1.2.4.</span> <span class="nav-text">分出空闲空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.2.5.</span> <span class="nav-text">安装</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/public/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/public/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/public/js/utils.js?v=7.1.2"></script>
+
+  <script src="/public/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/public/js/schemes/muse.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/public/js/scrollspy.js?v=7.1.2"></script>
+<script src="/public/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/public/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
